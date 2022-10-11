@@ -1,6 +1,6 @@
-MYSQL_HOST=localhost
+MYSQL_HOST=store_manager
 MYSQL_USER= root
 MYSQL_PASSWORD= password
 MYSQL_DATABASE= StoreManager
 PORT=3000
-HOST=localhost
+HOST=store_manager
