@@ -1,6 +1,6 @@
-MYSQL_HOST=store_manager
+MYSQL_HOST= store_manager
 MYSQL_USER= root
 MYSQL_PASSWORD= password
-MYSQL_DATABASE= StoreManager
+MYSQL_DATABASE= store_manager_db
 PORT=3000
-HOST=store_manager
+HOST= store_manager
