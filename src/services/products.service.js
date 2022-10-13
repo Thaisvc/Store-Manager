@@ -12,8 +12,6 @@ const findById = async (productId) => {
 };
 
  const newProduct = async (productName) => {
-   console.log(productName, ' service');
-
    const productADD = await productsModel.addNewProduct(productName);
    const newProd = await productsModel.findProductById(productADD);
    return { type: null, message: newProd };
