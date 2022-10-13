@@ -11,24 +11,16 @@ const findById = async (productId) => {
   return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
 };
 
-/* const newProduct = async (productName) => {
- /*  console.log(product, ' service');
-  const productADD = await productsModel.addNewProduct(product);
-  if (product) return { type: null, message: productADD };
-  return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
-  const newProductId = await productsModel.addNewProduct(productName);
-  const newProducts = await productsModel.findProductById(newProductId);
-  return { type: null, message: newProducts };
-}; */
+ const newProduct = async (productName) => {
+   console.log(productName, ' service');
 
-const addNewProduct = async (productName) => {
-  const newProductId = await productsModel.insert(productName);
-  const newProduct = await productsModel.findById(newProductId);
-  return { type: null, message: newProduct };
+   const productADD = await productsModel.addNewProduct(productName);
+   const newProd = await productsModel.findProductById(productADD);
+   return { type: null, message: newProd };
 };
 
 module.exports = {
   findAll,
   findById,
-  addNewProduct,
+  newProduct,
 };

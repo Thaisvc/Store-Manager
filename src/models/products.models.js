@@ -13,32 +13,25 @@ const findProductById = async (productId) => {
   return result;
 };
 
-/* const addNewProduct = async (neuProduct) => {
-  console.log(neuProduct, 'models');
+const addNewProduct = async (neuProduct) => {
+ /*  console.log(neuProduct, 'models');
   const columns = Object.keys(neuProduct) // ADD AS COLUNAS DE FORMA DINAMICA
     .map((key) => `${key}`)
     .join(', ');
 
   const placeholders = Object.keys(neuProduct) // ADD OS PLACEHOLDERS  DE FORMA DINAMICA
     .map((_key) => '?')
-    .join(', ');
+    .join(', '); */
 
-  const [result] = await conn.execute(
-    `INSERT INTO StoreManager.products (${columns}) VALUE (${placeholders})`,
-    [...Object.values(neuProduct)],
-  );
-  return result;
-}; */
-
-const insert = async (productName) => {
   const [{ insertId }] = await conn.execute(
     'INSERT INTO StoreManager.products (name) VALUES (?)',
-    [productName],
+    [neuProduct],
   );
   return insertId;
 };
+
 module.exports = {
   findAllProducts,
   findProductById,
-  insert,
+  addNewProduct,
 };
