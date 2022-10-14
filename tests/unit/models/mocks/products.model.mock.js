@@ -13,6 +13,11 @@ const allProducts = [
   }
 ]
 
+const newProduct = {
+  name: 'Teste model',
+};
+
 module.exports = {
   allProducts,
+  newProduct,
 }

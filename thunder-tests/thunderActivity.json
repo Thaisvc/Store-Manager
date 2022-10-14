@@ -60,12 +60,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-10-13T17:44:20.116Z",
-    "modified": "2022-10-14T13:01:23.343Z",
+    "modified": "2022-10-14T13:39:40.937Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"hj\"\n}",
+      "raw": "{\n  \"name\": \"produto xx\"\n}",
       "form": []
     },
     "tests": []
