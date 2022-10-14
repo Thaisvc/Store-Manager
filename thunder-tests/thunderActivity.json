@@ -41,12 +41,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-10-13T16:39:46.798Z",
-    "modified": "2022-10-13T19:34:14.725Z",
+    "modified": "2022-10-13T21:15:26.314Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"ProdutoX\"\n}",
+      "raw": "{\n  \"name\": \"\"\n}",
       "form": []
     },
     "tests": []
@@ -60,12 +60,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-10-13T17:44:20.116Z",
-    "modified": "2022-10-13T20:30:16.906Z",
+    "modified": "2022-10-14T13:01:23.343Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"ProdutoX\"\n}",
+      "raw": "{\n  \"name\": \"hj\"\n}",
       "form": []
     },
     "tests": []

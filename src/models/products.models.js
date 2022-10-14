@@ -30,7 +30,7 @@ const addNewProduct = async (neuProduct) => {
   // console.log(result);
   const [{ insertId }] = await conn.execute( // insertId VEM DO ARRAY DE RESULT É O NOVO ID CRIADO APARTIR DO INSERT
     'INSERT INTO StoreManager.products (name) VALUE (?)',
-    [neuProduct],
+    [neuProduct.name],
   );
   return insertId;
 };

@@ -14,10 +14,11 @@ const getProduct = async (req, res) => {
 };
 
 const insertNewProduct = async (req, res) => {
-   const { name } = req.body;
-  const { message } = await productsService.newProduct(name);
-  // if (type) return res.status(errorMap.mapError(type)).json({ message });
-  res.status(201).json(message);
+  const name = req.body;
+  const { type, message } = await productsService.newProduct(name);
+  // console.log(type);
+  if (type) return res.status(errorMap.mapError(type)).json({ message });
+  return res.status(201).json(message);
 };
 
 module.exports = {
