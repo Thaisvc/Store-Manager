@@ -21,8 +21,19 @@ const insertNewProduct = async (req, res) => {
   return res.status(201).json(message);
 };
 
+const ProductUpdate = async (req, res) => {
+  const { name } = req.body;
+  const { id } = req.params;
+  const newObj = { name, id };
+
+  const retorno = await productsService.productUpdate(newObj); // RETORNO É = {TYPE, MENSSAGE} DESTRUTURADO VINDO DE productUpdate
+  // console.log(retorno);
+  if (retorno.type) return res.status(errorMap.mapError(retorno.type)).json(retorno.message);
+  return res.status(200).json(retorno.message);
+};
 module.exports = {
   allProducts,
   getProduct,
   insertNewProduct,
+  ProductUpdate,
 };
