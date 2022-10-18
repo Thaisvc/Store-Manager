@@ -35,9 +35,17 @@ const ProductUpdate = async (req, res) => {
   return res.status(200).json(retorno.message); RETORNA MENSSAGEM DE ERRO COMO STRING DANDO ERRO NO TESTE */
 };
 
+const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+  const { type, message } = await productsService.productDel(id);
+  if (type) return res.status(errorMap.mapError(type)).json({ message });
+  return res.status(204).json(message);
+};
+
 module.exports = {
   allProducts,
   getProduct,
   insertNewProduct,
   ProductUpdate,
+  deleteProduct,
 };
