@@ -41,7 +41,6 @@ const update = async (updateProduct) => {
     'UPDATE StoreManager.products SET name = ? WHERE id = ?',
     [updateProduct.name, updateProduct.id],
   );
-  // console.log(result, 'gddf');
    return result;
 };
 
