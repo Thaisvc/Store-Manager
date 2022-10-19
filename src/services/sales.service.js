@@ -33,12 +33,13 @@ const findId = async (id) => {
 }; */// TENTATIVA NAO PASSOU NO TESTE MAIS É BOA REQ6
 
 const addSales = async (saleNew) => {
+  console.log(saleNew);
   const selectSale = await SalesModel.saleLastId();
   const promises = saleNew.map((car) =>
-    SalesModel.insert(car.productId, car.quantity, selectSale));
-  const result = Promise.all(promises);
-
-  return result;
+    SalesModel.insert(selectSale, car.productId, car.quantity));
+  Promise.all(promises);
+  const message = { id: selectSale, itemsSold: saleNew };
+  return { type: null, message };
 };
 
 module.exports = {

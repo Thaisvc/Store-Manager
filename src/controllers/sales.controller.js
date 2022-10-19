@@ -16,9 +16,9 @@ const salesFindId = async (req, res) => {
 };
 
 const addNewSales = async (req, res) => {
-  const result = await saleService.addSales(req.body);
-
-  return res.status(201).json({ message: result });
+  const { type, message } = await saleService.addSales(req.body);
+  if (type !== null) res.status(errorMap.mapError(type)).json({ message });
+  res.status(201).json(message);
  };
 
 module.exports = {

@@ -44,7 +44,6 @@ const saleLastId = async () => {
 }; */// TENTATIVA NAO PASSOU NO TESTE MAIS É ACHO Q SO FALTAVA UM MAP PARA PERCORRER O ARRAY BOA REQ6
 
 const insert = async (id, productId, quantity) => {
-   console.log(id, productId, quantity);
   const [{ insertId }] = await conn.execute(
     'INSERT INTO  StoreManager.sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?);',
     [id, productId, quantity],
