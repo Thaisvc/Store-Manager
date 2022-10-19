@@ -15,7 +15,14 @@ const salesFindId = async (req, res) => {
   res.status(200).json(message);
 };
 
+const addNewSales = async (req, res) => {
+  const result = await saleService.addSales(req.body);
+
+  return res.status(201).json({ message: result });
+ };
+
 module.exports = {
   allSale,
   salesFindId,
+  addNewSales,
 };

@@ -9,7 +9,7 @@ const allSales = async () => {
   ON sale_p.sale_id  = sale.id
   ORDER BY  sale_p.sale_id  , sale_p.product_id
    `,
-);
+  );
   return data;
 };
 
@@ -26,7 +26,36 @@ const SelectId = async (saleID) => {
   return camelize(result);
 };
 
+const saleLastId = async () => {
+  const [{ insertId }] = await conn.execute(
+    'INSERT INTO  StoreManager.sales(date) VALUES(now())',
+  );
+
+  return insertId;
+};
+
+/* const insert = async (SaleNew) => {
+   console.log(SaleNew);
+  const [result] = await conn.execute(
+    ' INSERT INTO  StoreManager.sales_products(sale_id, product_id, quantity) VALUES (?,?,?)',
+    [SaleNew.insertId, SaleNew.productId, SaleNew.quantity],
+  );
+  return result;
+}; */// TENTATIVA NAO PASSOU NO TESTE MAIS É ACHO Q SO FALTAVA UM MAP PARA PERCORRER O ARRAY BOA REQ6
+
+const insert = async (id, productId, quantity) => {
+   console.log(id, productId, quantity);
+  const [{ insertId }] = await conn.execute(
+    'INSERT INTO  StoreManager.sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?);',
+    [id, productId, quantity],
+  );
+
+  return insertId;
+};
+
 module.exports = {
   allSales,
   SelectId,
+  saleLastId,
+  insert,
 };
