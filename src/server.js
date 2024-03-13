@@ -13,7 +13,7 @@ require('dotenv').config();
   // console.log(`Escutando na porta ${process.env.PORT}`);
 // });
 
-const port = process.env.PORT || 3000; 
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Servidor está rodando na porta ${port}`);
 });
